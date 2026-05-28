@@ -1,10 +1,18 @@
 import api from "../api/axios";
 
 // Upload SAP CSV
-export const uploadSAP = async (formData) => {
+export const uploadSAP = async (
+  formData
+) => {
   const response = await api.post(
     "/upload/sap",
-    formData
+    formData,
+    {
+      headers: {
+        "Content-Type":
+          "multipart/form-data",
+      },
+    }
   );
 
   return response.data;
@@ -16,7 +24,13 @@ export const uploadUtility = async (
 ) => {
   const response = await api.post(
     "/upload/utility",
-    formData
+    formData,
+    {
+      headers: {
+        "Content-Type":
+          "multipart/form-data",
+      },
+    }
   );
 
   return response.data;
@@ -28,7 +42,13 @@ export const uploadTravel = async (
 ) => {
   const response = await api.post(
     "/upload/travel",
-    formData
+    formData,
+    {
+      headers: {
+        "Content-Type":
+          "multipart/form-data",
+      },
+    }
   );
 
   return response.data;
@@ -36,7 +56,9 @@ export const uploadTravel = async (
 
 // Get All Records
 export const getRecords = async () => {
-  const response = await api.get("/records");
+  const response = await api.get(
+    "/records"
+  );
 
   return response.data;
 };
@@ -73,4 +95,3 @@ export const rejectRecord = async (
 
   return response.data;
 };
-
