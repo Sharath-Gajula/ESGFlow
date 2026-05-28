@@ -4,12 +4,7 @@ import api from "../api/axios";
 export const uploadSAP = async (formData) => {
   const response = await api.post(
     "/upload/sap",
-    formData,
-    {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    }
+    formData
   );
 
   return response.data;
@@ -21,12 +16,7 @@ export const uploadUtility = async (
 ) => {
   const response = await api.post(
     "/upload/utility",
-    formData,
-    {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    }
+    formData
   );
 
   return response.data;
@@ -38,12 +28,7 @@ export const uploadTravel = async (
 ) => {
   const response = await api.post(
     "/upload/travel",
-    formData,
-    {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    }
+    formData
   );
 
   return response.data;
